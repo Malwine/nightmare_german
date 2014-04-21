@@ -10,3 +10,15 @@
 .nightmare p {
 	margin: 4px 0;
 }
+
+.nightmare.hover {
+	background: #FAFAFA;
+}
+
+.nightmare .admin {
+	display: none;
+}
+
+.nightmare.hover .admin {
+	display: inline;
+}
