@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @nightmare.name %>
+</p>
+
+<p>
+  <strong>Expression:</strong>
+  <%= @nightmare.expression %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @nightmare.description %>
+</p>
+
+<%= link_to 'Edit', edit_nightmare_path(@nightmare) %> |
+<%= link_to 'Back', nightmares_path %>

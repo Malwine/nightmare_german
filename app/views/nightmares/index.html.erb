@@ -1,0 +1,29 @@
+<h1>Listing nightmares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Expression</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nightmares.each do |nightmare| %>
+      <tr>
+        <td><%= nightmare.name %></td>
+        <td><%= nightmare.expression %></td>
+        <td><%= nightmare.description %></td>
+        <td><%= link_to 'Show', nightmare %></td>
+        <td><%= link_to 'Edit', edit_nightmare_path(nightmare) %></td>
+        <td><%= link_to 'Destroy', nightmare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nightmare', new_nightmare_path %>

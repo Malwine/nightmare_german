@@ -1,0 +1,29 @@
+<%= form_for(@nightmare) do |f| %>
+  <% if @nightmare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nightmare.errors.count, "error") %> prohibited this nightmare from being saved:</h2>
+
+      <ul>
+      <% @nightmare.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :expression %><br>
+    <%= f.text_field :expression %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
