@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li><%= link_to "Nightmare German", nightmares_path, class:'brand' %></li>
+					<li><%= link_to "Nightmares", nightmares_path%></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-<%= yield %>
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
