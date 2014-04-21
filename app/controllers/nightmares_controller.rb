@@ -28,7 +28,7 @@ class NightmaresController < ApplicationController
 
     respond_to do |format|
       if @nightmare.save
-        format.html { redirect_to @nightmare, notice: 'Nightmare was successfully created.' }
+        format.html { redirect_to @nightmare }
         format.json { render :show, status: :created, location: @nightmare }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class NightmaresController < ApplicationController
   def update
     respond_to do |format|
       if @nightmare.update(nightmare_params)
-        format.html { redirect_to @nightmare, notice: 'Nightmare was successfully updated.' }
+        format.html { redirect_to @nightmare, notice: 'Nightmare updated.' }
         format.json { render :show, status: :ok, location: @nightmare }
       else
         format.html { render :edit }
