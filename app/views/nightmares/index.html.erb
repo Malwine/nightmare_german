@@ -3,7 +3,8 @@
 </div>
 
 <%= link_to "Post a New Nightmare", new_nightmare_path, class:"btn btn-primary" %>
-
+<br>
+<br>
 <% @nightmares.each do |nightmare|%>
   <div class="nightmare" >
     <strong><%= nightmare.name%></strong>
