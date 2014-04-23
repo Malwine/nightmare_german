@@ -11,10 +11,12 @@
     <p><%= nightmare.expression%> : <em><%= nightmare.description%></em></p>
     <div class="meta">
       <%= link_to time_ago_in_words(nightmare.created_at) + " ago", nightmare%>
+      <% if user_signed_in? then %>
       <span class="admin">
        | <%= link_to 'Edit', edit_nightmare_path(nightmare)%> | 
         <%= link_to 'Destroy', nightmare, method: :delete, data: {confirm:"Are you sure you want to delete this?"}%>
       </span>
+      <% end %>
     </div>
   </div>
 <% end %>

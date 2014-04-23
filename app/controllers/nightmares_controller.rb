@@ -1,5 +1,6 @@
 class NightmaresController < ApplicationController
   before_action :set_nightmare, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /nightmares
   # GET /nightmares.json

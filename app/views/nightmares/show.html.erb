@@ -15,5 +15,7 @@
   <%= @nightmare.description %>
 </p>
 
+<% if user_signed_in? then %>
 <%= link_to 'Edit', edit_nightmare_path(@nightmare) %> |
+<% end %>
 <%= link_to 'Back', nightmares_path %>
