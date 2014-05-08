@@ -27,6 +27,10 @@ class NightmaresController < ApplicationController
   def create
     @nightmare = Nightmare.new(nightmare_params)
 
+    def nightmare_params
+      params.require(:nightmare).permit(:expression, :description, :user_id)
+    end
+
     respond_to do |format|
       if @nightmare.save
         format.html { redirect_to @nightmare }
