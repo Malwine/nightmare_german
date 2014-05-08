@@ -7,7 +7,7 @@
 <br>
 <% @nightmares.each do |nightmare|%>
   <div class="nightmare" >
-    <strong><%= nightmare.name%></strong>
+
     <p><%= nightmare.expression%> : <em><%= nightmare.description%></em></p>
     <div class="meta">
       <%= link_to time_ago_in_words(nightmare.created_at) + " ago", nightmare%>
