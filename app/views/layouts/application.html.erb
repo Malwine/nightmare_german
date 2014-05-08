@@ -15,20 +15,24 @@
 					<li><%= link_to "Nightmares", nightmares_path%></li>
 				</ul>
 				<ul class="nav pull-right">
-					<li>
-						<%= link_to('Profile', edit_user_registration_path) %>
-					</li>
 					
 					<% if user_signed_in? then %>
-					<li>
-						<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-					</li>
-					<% else %>
-					<li>
-						<%= link_to('Login', new_user_session_path) %>
-					</li>
+						<li>
+						<%= link_to current_user.name, edit_user_registration_path %>
+						</li>
+						
+						<li>
+							<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+						</li>
+						<% else %>
+						<li>
+							<%= link_to('Register', new_user_registration_path) %>
+						</li>
+						<li>
+							<%= link_to('Login', new_user_session_path) %>
+						</li>
 					<% end %>
-					</ul>
+				</ul>
 			</div>
 		</div>
 	</div>
