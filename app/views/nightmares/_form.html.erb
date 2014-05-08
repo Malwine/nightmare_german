@@ -1,4 +1,4 @@
-<%= form_for(@nightmare) do |f| %>
+<%= simple_form_for(@nightmare, html: {class: "form-horizontal"}) do |f| %>
   <% if @nightmare.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@nightmare.errors.count, "error") %> prohibited this nightmare from being saved:</h2>
@@ -11,15 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :expression %><br>
-    <%= f.text_field :expression %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <%= f.input :expression %>
+  <%= f.input :description %>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:"btn btn-primary" %>
   </div>
 <% end %>
