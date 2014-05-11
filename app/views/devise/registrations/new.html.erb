@@ -1,24 +1,30 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="row">
+  <div class="span4">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+            html:{class: "well"}) do |f| %>
   <%= devise_error_messages! %>
+  
+      <fieldset>
+        <legend><strong>Sign Up</strong></legend>
+        <%= f.input :name %>
+        <%= f.input :profile_name %>
+        <%= f.input :email %>
+        <%= f.input :password %>
+        <%= f.input :password_confirmation %>
 
-  <div> <%= f.label :name %><br />
-		<%= f.text_field :name %></div>
+        <% if devise_mapping.rememberable? -%>
+          <div><%= f.input :remember_me, as: :boolean %></div>
+        <% end -%>
 
-  <div> <%= f.label :profile_name %><br />
-		<%= f.text_field :profile_name %></div>
+        <div><%= f.button :submit, "Sign up" %></div>
+      </fieldset>
+  <% end %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <%= render "devise/shared/links" %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
- <%= render "devise/shared/links" %>
+  </div>
+  
+  <div class="span8">
+    <h3 class="lead"> After signing in you're able to add new German nightmare words to the list.</h3>
+  </div>
+</div>
