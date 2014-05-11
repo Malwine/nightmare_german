@@ -2,7 +2,9 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @nightmare.user.name %>
+  <% if @nightmare.user.present?%>
+  <%= @nightmare.user.name%>
+  <% end %>
 </p>
 
 <p>

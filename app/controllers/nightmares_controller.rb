@@ -27,10 +27,6 @@ class NightmaresController < ApplicationController
   def create
     @nightmare = Nightmare.new(nightmare_params)
 
-    def nightmare_params
-      params.require(:nightmare).permit(:expression, :description, :user_id)
-    end
-
     respond_to do |format|
       if @nightmare.save
         format.html { redirect_to @nightmare }
@@ -74,6 +70,6 @@ class NightmaresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def nightmare_params
-      params.require(:nightmare).permit(:name, :expression, :description)
+      params.require(:nightmare).permit(:name, :expression, :description, :user_id)
     end
 end
